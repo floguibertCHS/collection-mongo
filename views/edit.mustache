@@ -1,0 +1,30 @@
+<html>
+    <head>
+    </head>
+    <body>
+        edit coin
+        {{#coin}}
+        <a href="/{{_id}}">view</a>
+        <a href="/">view all</a>
+            <div class="coin_edit">
+                <form action="/edit/{{_id}}" method='post'>
+                    <input type="text" name="name" value='{{name}}'>
+                        <select name="year">
+                            <option value="1800">1800s</option>
+                            <option value="1900">1900-1950</option>
+                            <option value="1950">1950-2000</option>
+                            <option value="2000">2000+</option>
+                        </select>
+                     {{#location}}    
+                        <input type="text" name="city" value={{city}}>
+                        <input type="text" name="state" value={{state}}>
+                    {{/location}}
+                    {{#color}}
+                        <textarea name="color"  placeholder='{{.}}'></textarea>
+                    {{/color}}
+                    <button type="submit">save changes</button>
+                </form>
+            </div>
+        {{/coin}}
+    </body>
+</html>

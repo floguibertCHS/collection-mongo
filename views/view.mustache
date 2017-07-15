@@ -1,0 +1,25 @@
+<html>
+    <head>
+            <script src="https://use.fontawesome.com/00e42f7d6a.js"></script>
+
+    </head>
+    <body>
+        view coin
+        {{#coin}}
+        <a href="/">view all</a>
+            <div class="coin_view">
+                <p>Name: {{name}}</p>
+                <p>Year: {{year}}</p>
+                <p>{{#location}}
+                    From: {{city}}, {{state}}
+                {{/location}}</p>
+                <p>Details: {{#color}}{{.}}{{/color}}</p>
+            </div>
+            <a href="/edit/{{_id}}">edit</a>
+            <!--<form action="/edit/{{_id}}" method='post'>-->
+            <form action="/delete/{{_id}}" method="POST">
+                    <button class='delete' type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </form>
+        {{/coin}}
+    </body>
+</html>
